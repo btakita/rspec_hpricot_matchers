@@ -43,6 +43,10 @@ module RspecHpricotMatchers
       explanation = @actual_count ? "but found #{@actual_count}" : "but did"
       "expected\n#{@hdoc.to_s}\nnot to have #{failure_count_phrase} #{failure_selector_phrase}, #{explanation}"
     end
+    
+    def failure_message_when_negated
+      negative_failure_message
+    end
 
     private
       def hdoc_for(input)
